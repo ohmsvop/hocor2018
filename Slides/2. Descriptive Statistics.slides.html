@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Descriptive Statistics slides</title>
+<title>2. Descriptive Statistics slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13242,23 +13242,12 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Descriptive-statistics">Descriptive statistics<a class="anchor-link" href="#Descriptive-statistics">&#182;</a></h1><h2 id="Outline">Outline<a class="anchor-link" href="#Outline">&#182;</a></h2><ul>
-<li><a href=#frequency>Frequency</a></li>
-<li><a href=#measuresOfCentralTendency>Measures of central tendency</a><ul>
-<li>mode</li>
-<li>median</li>
-<li>mean</li>
-</ul>
-</li>
-<li><a href=#measuresOfDispersion>Measures of dispersion</a><ul>
-<li>range</li>
-<li>Quantiles </li>
-<li>Standard deviation</li>
-<li>Variance</li>
-</ul>
-</li>
-<li><a href=#normalizationAndStandardization>Normalization and Standardization</a></li>
-<li><a href=#coefficientsOfCorrelation>Coefficients of correlation</a></li>
+<h1 id="2.-Descriptive-Statistics">2. Descriptive Statistics<a class="anchor-link" href="#2.-Descriptive-Statistics">&#182;</a></h1><h2 id="Outline">Outline<a class="anchor-link" href="#Outline">&#182;</a></h2><ul>
+<li><a href="#frequency">Frequency</a></li>
+<li><a href="#measuresOfCentralTendency">Measures of central tendency</a></li>
+<li><a href="#measuresOfDispersion">Measures of dispersion</a></li>
+<li><a href="#normalizationAndStandardization">Normalization and Standardization</a></li>
+<li><a href="#coefficientsOfCorrelation">Coefficients of correlation</a></li>
 </ul>
 
 </div>
@@ -13267,7 +13256,8 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequency">Frequency<a name="frequency" /><a class="anchor-link" href="#Frequency">&#182;</a></h2>
+<h2 id="Frequency">Frequency<a name="frequency" /><a class="anchor-link" href="#Frequency">&#182;</a></h2><p>資料常常需要計算出現的頻率，<code>.value_counts()</code> 可以統計某個欄位中每個值出現的次數。</p>
+
 </div>
 </div>
 </div><div class="fragment">
@@ -13402,9 +13392,9 @@ a.anchor-link {
 <div class="output_text output_subarea output_execute_result">
 <pre>中央社               14
 聯合新聞網             13
+今日新聞NOWnews       11
 新頭殼               11
 風傳媒               11
-今日新聞NOWnews       11
 三立新聞網 setn.com    10
 民眾日報              10
 TVBS新聞網            9
@@ -13412,13 +13402,13 @@ TVBS新聞網            9
 台灣好新聞報             6
 EBC東森新聞            6
 華視                 3
-信傳媒                2
 中華日報               2
-壹電視影音              1
-上報                 1
+信傳媒                2
 讀者投書               1
-詹為元                1
+壹電視影音              1
 林青弘                1
+上報                 1
+詹為元                1
 Name: provider, dtype: int64</pre>
 </div>
 
@@ -13588,7 +13578,8 @@ Name: 民進黨, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Measures-of-central-tendency">Measures of central tendency<a name="measuresOfCentralTendency" /><a class="anchor-link" href="#Measures-of-central-tendency">&#182;</a></h2>
+<h2 id="Measures-of-central-tendency">Measures of central tendency<a name="measuresOfCentralTendency" /><a class="anchor-link" href="#Measures-of-central-tendency">&#182;</a></h2><p>可以使用 <code>.mode()</code> 得到眾數、<code>.median()</code> 得到中位數、<code>.mean()</code> 得到平均數。</p>
+
 </div>
 </div>
 </div><div class="fragment">
@@ -13712,7 +13703,10 @@ dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Measures-of-dispersion">Measures of dispersion<a name="measuresOfDispersion" /><a class="anchor-link" href="#Measures-of-dispersion">&#182;</a></h3>
+<h3 id="Measures-of-dispersion">Measures of dispersion<a name="measuresOfDispersion" /><a class="anchor-link" href="#Measures-of-dispersion">&#182;</a></h3><p>可以用 <code>.max()</code> 得到最大值、<code>.min()</code> 得到最小值、相減即為全距。<br>
+可以用 <code>.quantile()</code> 得到百分位數、<code>.std()</code> 得到標準差、<code>.var()</code> 得到變異數。<br>
+<code>.describe()</code> 則是數據表格的統計，包含平均數、標準差、最大最小值、中位數和四分位數。</p>
+
 </div>
 </div>
 </div><div class="fragment">
@@ -13884,11 +13878,109 @@ dtype: object</pre>
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">news</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>民進黨</th>
+      <th>length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>120.000000</td>
+      <td>120.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.800000</td>
+      <td>699.483333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.198548</td>
+      <td>319.961027</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>63.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.000000</td>
+      <td>526.500000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.000000</td>
+      <td>680.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3.000000</td>
+      <td>832.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>11.000000</td>
+      <td>1948.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Normalization-and-Standardization">Normalization and Standardization<a name="normalizationAndStandardization" /><a class="anchor-link" href="#Normalization-and-Standardization">&#182;</a></h3><p>Normalization:<br>
+<h3 id="Normalization-and-Standardization">Normalization and Standardization<a name="normalizationAndStandardization" /><a class="anchor-link" href="#Normalization-and-Standardization">&#182;</a></h3><p>在建立模型前，通常會成資料標準化，常見的方法有下面兩種。<br>
+Normalization:<br>
 $ x_{\text{norm}} = (x-x_{\text{min}}) / (x_{\text{max}} - x_{\text{min}}) $<br>
 $x_{\text{norm}}$'s are between 0 and 1.</p>
 <p>Standardization:<br>
@@ -13900,7 +13992,7 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">news</span><span class="p">[</span><span class="s1">&#39;length_norm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">news</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="n">news</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">news</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">news</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
@@ -13914,7 +14006,7 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -13932,13 +14024,13 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11cdf6668&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1212ef9b0&gt;</pre>
 </div>
 
 </div>
@@ -13964,7 +14056,7 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">news</span><span class="p">[</span><span class="s1">&#39;length_std&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
@@ -13980,13 +14072,13 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11cec3b00&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12142ab00&gt;</pre>
 </div>
 
 </div>
@@ -14012,7 +14104,7 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">news</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
@@ -14028,13 +14120,13 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11cf9c748&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12155cd30&gt;</pre>
 </div>
 
 </div>
@@ -14061,13 +14153,14 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Coefficients-of-correlation">Coefficients of correlation<a name="coefficientsOfCorrelation" /><a class="anchor-link" href="#Coefficients-of-correlation">&#182;</a></h3>
+<h3 id="Coefficients-of-correlation">Coefficients of correlation<a name="coefficientsOfCorrelation" /><a class="anchor-link" href="#Coefficients-of-correlation">&#182;</a></h3><p>可以使用 <code>.corr()</code> 來看兩個欄位之間的相關係數（預設是 Pearson ， 也可以用 Kendall 或Spearman 的方法）。</p>
+
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">news</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;柯文哲&#39;</span><span class="p">,</span><span class="s1">&#39;姚文智&#39;</span><span class="p">,</span><span class="s1">&#39;民進黨&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
@@ -14083,7 +14176,7 @@ $x_{\text{std}}$'s have mean 0 and standard deviation 1.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
